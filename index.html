@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Темы для Telegram</title>
+  <link rel="icon" href="favicon.png" type="image/png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Кнопка меню в левом верхнем углу -->
+  <div id="menu-trigger" class="menu-button">☰</div>
+
+<!-- Кнопка выбора платформы -->
+<div id="platform-toggle" class="platform-button">📱</div>
+
+<!-- Выпадающее меню платформ -->
+<div id="platform-menu" class="platform-menu">
+  <div class="platform-item" data-platform="android">
+    <span class="platform-dot"></span> Android
+  </div>
+  <div class="platform-item" data-platform="ios">
+    <span class="platform-dot"></span> iOS
+  </div>
+</div>
+
+  <!-- Мини-окно информации -->
+  <div id="mini-modal" class="mini-modal">
+    <h3>•••</h3>
+    <p><strong>Сообщество:</strong> <a href="https://t.me/WappGoTema" target="_blank">wappgo</a></p>
+    <p><strong>Авторы:</strong></p>
+    <ul>
+      <li><a href="https://t.me/nigtm1rror" target="_blank">STRUCTURE</a></li>
+      <li><a href="https://t.me/cuczunan" target="_blank">BINGO</a></li>
+    </ul>
+    <button class="close-btn">Закрыть</button>
+  </div>
+
+  <!-- Модальное окно для просмотра изображения -->
+  <div id="image-modal" class="image-modal">
+    <span class="close-image">&times;</span>
+    <img id="modal-image" src="" alt="Крупный план">
+  </div>
+
+  <!-- Основной контент -->
+  <div class="container">
+    <h1>Темы для Telegram</h1>
+    <p class="subtitle">Установи тему одним кликом</p>
+
+    <div id="themes-container" class="theme-grid">
+      <!-- Сюда JS вставит карточки -->
+    </div>
+  </div>
+
+  <div class="footer">
+    &copy; 2025 | Все права защищены EDRi
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

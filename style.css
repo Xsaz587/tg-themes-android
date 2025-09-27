@@ -1,0 +1,342 @@
+/* Глобальные стили — готика, красный, мрачно */
+body {
+  background-color: #000;
+  color: #e60000;
+  font-family: 'Courier New', monospace;
+  margin: 0;
+  padding: 0;
+  background-image: radial-gradient(circle, rgba(30,0,0,0.8) 0%, rgba(0,0,0,1) 70%);
+  background-attachment: fixed;
+  text-shadow: 0 0 5px rgba(230, 0, 0, 0.7);
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 30px 20px;
+}
+
+h1 {
+  text-align: center;
+  font-size: 2.5em;
+  margin-bottom: 10px;
+  color: #ff0000;
+  text-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000;
+}
+
+.subtitle {
+  text-align: center;
+  margin-bottom: 40px;
+  font-style: italic;
+  color: #cc0000;
+}
+
+.theme-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 25px;
+  margin-top: 30px;
+}
+
+.theme-card {
+  background: rgba(10, 0, 0, 0.8);
+  border: 1px solid #e60000;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 0 15px rgba(230, 0, 0, 0.5);
+  transition: transform 0.3s, box-shadow 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+.theme-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 25px rgba(230, 0, 0, 0.8);
+}
+
+.theme-card h3 {
+  margin-top: 0;
+  color: #ff3333;
+  border-bottom: 1px dashed #e60000;
+  padding-bottom: 3px;
+}
+
+.theme-preview {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: contain;
+  border-radius: 6px;
+  margin: 15px 0;
+  border: 1px solid #550000;
+  background-color: rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.theme-preview:hover {
+  transform: scale(1.02);
+}
+
+.btn {
+  display: block;
+  width: 90%;
+  padding: 16px;
+  background-color: #e60000;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  border: none;
+  border-radius: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-top: 15px;
+}
+
+.btn:hover {
+  background-color: #cc0000;
+}
+
+.footer {
+  text-align: center;
+  margin-top: 60px;
+  padding-top: 20px;
+  border-top: 1px solid #550000;
+  color: #666;
+  font-size: 0.9em;
+}
+
+@media (max-width: 600px) {
+  .theme-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* === КНОПКА МЕНЮ === */
+.menu-button {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  font-size: 19px;
+  color: #e60000;
+  cursor: pointer;
+  z-index: 1000;
+  user-select: none;
+  transition: transform 0.3s;
+  padding: 5px 12px;
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid #550000;
+  box-shadow: 0 0 10px rgba(230, 0, 0, 0.5);
+}
+
+.menu-button:hover {
+  transform: scale(1.1);
+  background: rgba(10, 0, 0, 0.6);
+}
+
+/* === МИНИ-ОКНО ИНФОРМАЦИИ === */
+.mini-modal {
+  display: none;
+  position: fixed;
+  top: 60px;
+  left: 25px;
+  width: 280px;
+  padding: 15px;
+  background: rgba(10, 0, 0, 0.9);
+  border: 1px solid #e60000;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(230, 0, 0, 0.6);
+  backdrop-filter: blur(10px);
+  z-index: 1001;
+  animation: fadeIn 0.4s ease;
+}
+
+.mini-modal.active {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.mini-modal h3 {
+  margin-top: 0;
+  color: #ff0000;
+  font-size: 1.2em;
+  text-align: center;
+  border-bottom: 1px dashed #e60000;
+  padding-bottom: 8px;
+}
+
+.mini-modal p {
+  margin: 10px 0;
+  color: #e60000;
+  line-height: 1.5;
+}
+
+.mini-modal a {
+  color: #e60000;
+  text-decoration: underline;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.mini-modal a:hover {
+  text-decoration: none;
+  color: #ff0000;
+}
+
+.mini-modal ul {
+  margin: 10px 0;
+  padding-left: 20px;
+}
+
+.mini-modal li {
+  margin: 8px 0;
+  list-style-type: "> ";
+}
+
+.mini-modal .close-btn {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #e60000;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-top: 15px;
+  transition: background-color 0.3s;
+}
+
+.mini-modal .close-btn:hover {
+  background-color: #cc0000;
+}
+
+/* === МОДАЛЬНОЕ ОКНО ДЛЯ ИЗОБРАЖЕНИЯ === */
+.image-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  z-index: 1002;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(8px);
+  animation: fadeIn 0.4s ease;
+}
+
+.image-modal.active {
+  display: flex;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+#modal-image {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(230, 0, 0, 0.6);
+  transition: transform 0.3s;
+}
+
+#modal-image:hover {
+  transform: scale(1.02);
+}
+
+.close-image {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 32px;
+  color: #e60000;
+  cursor: pointer;
+  z-index: 1003;
+  user-select: none;
+  transition: transform 0.3s;
+}
+
+.close-image:hover {
+  transform: scale(1.1);
+}
+
+/* === КНОПКА ВЫБОРА ПЛАТФОРМЫ === */
+.platform-button {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  font-size: 18px;
+  color: #e60000;
+  cursor: pointer;
+  z-index: 1000;
+  user-select: none;
+  padding: 6px 10px;
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid #550000;
+  box-shadow: 0 0 10px rgba(230, 0, 0, 0.5);
+  transition: transform 0.3s;
+}
+
+.platform-button:hover {
+  transform: scale(1.1);
+  background: rgba(10, 0, 0, 0.6);
+}
+
+/* === ВЫПАДАЮЩЕЕ МЕНЮ ПЛАТФОРМ === */
+.platform-menu {
+  display: none;
+  position: fixed;
+  top: 60px;
+  right: 25px;
+  width: 180px;
+  background: rgba(10, 0, 0, 0.9);
+  border: 1px solid #e60000;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(230, 0, 0, 0.6);
+  z-index: 1001;
+  padding: 10px 0;
+  backdrop-filter: blur(8px);
+}
+
+.platform-menu.active {
+  display: block;
+}
+
+.platform-item {
+  padding: 10px 15px;
+  color: #e60000;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: background 0.2s;
+}
+
+.platform-item:hover {
+  background: rgba(230, 0, 0, 0.1);
+}
+
+.platform-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: transparent;
+  border: 2px solid #e60000;
+}
+
+.platform-item.active .platform-dot {
+  background: #e60000;
+  border-color: #e60000;
+}
