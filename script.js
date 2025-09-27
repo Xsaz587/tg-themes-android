@@ -84,7 +84,7 @@ document.addEventListener('DOMContentLoaded', function () {
   if (!platformToggle || !platformMenu) return;
 
   // URL-адреса для каждой платформы
-  const androidUrl = 'сылка';
+  const androidUrl = 'https://xsaz587.github.io/tg-themes-android/';
   const iosUrl = 'сылка';
 
   // Определяем текущую платформу по URL
